@@ -11,30 +11,41 @@
 			<div class="logo_container">
 				<div class="logo">
 					<img src="frontend/images/logo.png" alt="">
-					<span>course</span>
+					<span>Velasquez</span>
 				</div>
 			</div>
 
 			<!-- Main Navigation -->
 			<nav class="main_nav_container">
 				<div class="main_nav">
+					@if (Route::has('login'))
 					<ul class="main_nav_list">
-						<li class="main_nav_item"><a href="#">home</a></li>
-						<li class="main_nav_item"><a href="#">about us</a></li>
-						<li class="main_nav_item"><a href="courses.html">courses</a></li>
-						<li class="main_nav_item"><a href="news.html">news</a></li>
-						<li class="main_nav_item"><a href="contact.html">contact</a></li>
-            <li class="main_nav_item"><a href="contact.html">Registrarse</a></li>
-            <li class="main_nav_item"><a href="contact.html">Iniciar</a></li>
 
+						<li class="main_nav_item"><a href="{{ url('/') }}">Inicio</a></li>
+						<li class="main_nav_item"><a href="courses.html">Cursos</a></li>
+						<li class="main_nav_item"><a href="news.html">Noticias</a></li>
+						<li class="main_nav_item"><a href="contact.html">contact</a></li>
+						@auth
+						<li class="main_nav_item"><a href="{{ url('/home') }}"><i class="fas fa-user"></i> {{Auth::user()->name}}</a></li>
+						<li class="main_nav_item"><a href="{{ url('/logout') }}"onclick="event.preventDefault();
+						document.getElementById('logout-form').submit();">
+						<i class="fas fa-sign-out-alt"></i> Salir</a></li>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+							{{ csrf_field() }}
+						</form>
+						@else
+						<li class="main_nav_item"><a href="{{ route('login') }}">Iniciar</a></li>
+            <li class="main_nav_item"><a href="{{ route('register') }}">Registrarse</a></li>
+						@endauth
 
 					</ul>
+					@endif
 				</div>
 			</nav>
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
 			<img src="frontend/images/phone-call.svg" alt="">
-			<span>+43 4566 7788 2457</span>
+			<span>+50585269959</span>
 		</div>
 
 		<!-- Hamburger -->
@@ -55,15 +66,29 @@
 		<!-- Menu Items -->
 		<div class="menu_inner menu_mm">
 			<div class="menu menu_mm">
+				@if (Route::has('login'))
 				<ul class="menu_list menu_mm">
-					<li class="menu_item menu_mm"><a href="#">Home</a></li>
-					<li class="menu_item menu_mm"><a href="#">About us</a></li>
-					<li class="menu_item menu_mm"><a href="courses.html">Courses</a></li>
-					<li class="menu_item menu_mm"><a href="elements.html">Elements</a></li>
-					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
+
+					<li class="menu_item menu_mm"><a href="{{ url('/') }}">Inicio</a></li>
+
+					<li class="menu_item menu_mm"><a href="courses.html">Cursos</a></li>
+					<li class="menu_item menu_mm"><a href="news.html">Noticias</a></li>
 					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
-          <li class="menu_item menu_mm"><a href="contact.html">Login</a></li>
+					@auth
+					<li class="menu_item menu_mm"><a href="{{ url('/home') }}"><i class="fas fa-user"></i> {{Auth::user()->name}}</a></li>
+					<li class="menu_item menu_mm"><a href="{{ url('/logout') }}"onclick="event.preventDefault();
+					document.getElementById('logout-form').submit();">
+					<i class="fas fa-sign-out-alt"></i> Salir</a></li>
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+						{{ csrf_field() }}
+					</form>
+					@else
+					<li class="menu_item menu_mm"><a href="{{ route('login') }}">Iniciar</a></li>
+					<li class="menu_item menu_mm"><a href="{{ route('register') }}">Registrarse</a></li>
+					@endauth
+
 				</ul>
+				@endif
 
 				<!-- Menu Social -->
 
@@ -77,7 +102,7 @@
 					</ul>
 				</div>
 
-				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+
 			</div>
 
 		</div>
@@ -97,7 +122,7 @@
 					<div class="hero_slide_background" style="background-image:url(frontend/images/slider_background.jpg)"></div>
 					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 						<div class="hero_slide_content text-center">
-							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your <span>Education</span> today!</h1>
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Prueba <span>Erika</span> ahora!</h1>
 						</div>
 					</div>
 				</div>
@@ -107,7 +132,7 @@
 					<div class="hero_slide_background" style="background-image:url(frontend/images/slider_background.jpg)"></div>
 					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 						<div class="hero_slide_content text-center">
-							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your <span>Education</span> today!</h1>
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Prueba <span>Erika</span> ahora!</h1>
 						</div>
 					</div>
 				</div>
@@ -117,7 +142,7 @@
 					<div class="hero_slide_background" style="background-image:url(frontend/images/slider_background.jpg)"></div>
 					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 						<div class="hero_slide_content text-center">
-							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your <span>Education</span> today!</h1>
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Prueba <span>Erika</span> ahora!</h1>
 						</div>
 					</div>
 				</div>
@@ -125,7 +150,7 @@
 			</div>
 
 			<div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200">prev</span></div>
-			<div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200">next</span></div>
+			<div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200">sig</span></div>
 		</div>
 
 	</div>
@@ -139,8 +164,8 @@
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
 							<img src="frontend/images/earth-globe.svg" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title">Online Courses</h2>
-								<a href="courses.html" class="hero_box_link">view more</a>
+								<h2 class="hero_box_title">Elemento 1</h2>
+								<a href="courses.html" class="hero_box_link">Ver más</a>
 							</div>
 						</div>
 					</div>
@@ -149,8 +174,8 @@
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
 							<img src="frontend/images/books.svg" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title">Our Library</h2>
-								<a href="courses.html" class="hero_box_link">view more</a>
+								<h2 class="hero_box_title">Elemento 2</h2>
+								<a href="courses.html" class="hero_box_link">Ver más</a>
 							</div>
 						</div>
 					</div>
@@ -159,8 +184,8 @@
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
 							<img src="frontend/images/professor.svg" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title">Our Teachers</h2>
-								<a href="teachers.html" class="hero_box_link">view more</a>
+								<h2 class="hero_box_title">Elemento 3</h2>
+								<a href="teachers.html" class="hero_box_link">Ver más</a>
 							</div>
 						</div>
 					</div>
@@ -170,6 +195,12 @@
 		</div>
 	</div>
 
+	<!--          aqui comienza el contenido-->
+	<!--          aqui comienza el contenido-->
+	<!--          aqui comienza el contenido-->
+	<!--          aqui comienza el contenido-->
+	<!--          aqui comienza el contenido-->
+	@section('contenido')
 	<!-- Popular -->
 
 	<div class="popular page_section">
@@ -177,7 +208,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h1>Popular Courses</h1>
+						<h1>Lecciones</h1>
 					</div>
 				</div>
 			</div>
@@ -254,7 +285,7 @@
 
 					<div class="register_section d-flex flex-column align-items-center justify-content-center">
 						<div class="register_content text-center">
-							<h1 class="register_title">Register now and get a discount <span>50%</span> discount until 1 January</h1>
+							<h1 class="register_title">Register now  <span>!!!</span> Lorem ipsum dolor sit amet</h1>
 							<p class="register_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempo.</p>
 							<div class="button button_1 register_button mx-auto trans_200"><a href="#">register now</a></div>
 						</div>
@@ -398,7 +429,7 @@
 									<p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
 									<div class="testimonial_user">
 										<div class="testimonial_image mx-auto">
-											<img src="images/testimonials_user.jpg" alt="">
+											<img src="frontend/images/testimonials_user.jpg" alt="">
 										</div>
 										<div class="testimonial_name">james cooper</div>
 										<div class="testimonial_title">Graduate Student</div>
@@ -497,7 +528,7 @@
 
 							<div class="col-lg-4 order-lg-3 order-1">
 								<div class="event_image">
-									<img src="images/event_2.jpg" alt="https://unsplash.com/@claybanks1989">
+									<img src="frontend/images/event_2.jpg" alt="https://unsplash.com/@claybanks1989">
 								</div>
 							</div>
 
@@ -527,7 +558,7 @@
 
 							<div class="col-lg-4 order-lg-3 order-1">
 								<div class="event_image">
-									<img src="images/event_3.jpg" alt="https://unsplash.com/@juanmramosjr">
+									<img src="frontend/images/event_3.jpg" alt="https://unsplash.com/@juanmramosjr">
 								</div>
 							</div>
 
@@ -582,7 +613,7 @@
 						<!-- Logo -->
 						<div class="logo_container">
 							<div class="logo">
-								<img src="images/logo.png" alt="">
+								<img src="frontend/images/logo.png" alt="">
 								<span>course</span>
 							</div>
 						</div>
@@ -629,19 +660,19 @@
 							<ul>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
-										<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+										<img src="frontend/images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
 									Blvd Libertad, 34 m05200 Arévalo
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
-										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
+										<img src="frontend/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
 									0034 37483 2445 322
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
-										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
+										<img src="frontend/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>hello@company.com
 								</li>
 							</ul>
@@ -649,16 +680,19 @@
 					</div>
 
 				</div>
+
+				<!--Fin del contenido que sera remplazado por las vistas hijas-->
+	      <!--Fin del contenido que sera remplazado por las vistas hijas-->
+	      <!--Fin del contenido que sera remplazado por las vistas hijas-->
+	      <!--Fin del contenido que sera remplazado por las vistas hijas-->
+	      <!--Fin del contenido que sera remplazado por las vistas hijas-->
+	      @show
 			</div>
 
 			<!-- Footer Copyright -->
 
 			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
-				<div class="footer_copyright">
-					<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
-				</div>
+
 				<div class="footer_social ml-sm-auto">
 					<ul class="menu_social">
 						<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
@@ -672,6 +706,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 		</div>
 	</footer>
+
 
 </div>
 @stop
