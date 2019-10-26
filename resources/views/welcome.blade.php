@@ -11,7 +11,7 @@
 			<div class="logo_container">
 				<div class="logo">
 					<img src="frontend/images/logo.png" alt="">
-					<span>Velasquez</span>
+					<span>Velázquez</span>
 				</div>
 			</div>
 
@@ -24,7 +24,7 @@
 						<li class="main_nav_item"><a href="{{ url('/') }}">Inicio</a></li>
 						<li class="main_nav_item"><a href="courses.html">Cursos</a></li>
 						<li class="main_nav_item"><a href="news.html">Noticias</a></li>
-						<li class="main_nav_item"><a href="contact.html">contact</a></li>
+						<li class="main_nav_item"><a href="contact.html">Acerca De</a></li>
 						@auth
 						<li class="main_nav_item"><a href="{{ url('/home') }}"><i class="fas fa-user"></i> {{Auth::user()->name}}</a></li>
 						<li class="main_nav_item"><a href="{{ url('/logout') }}"onclick="event.preventDefault();
@@ -122,7 +122,7 @@
 					<div class="hero_slide_background" style="background-image:url(frontend/images/slider_background.jpg)"></div>
 					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 						<div class="hero_slide_content text-center">
-							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Prueba <span>Erika</span> ahora!</h1>
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Transformando en <span>Señas</span></h1>
 						</div>
 					</div>
 				</div>
@@ -162,9 +162,9 @@
 
 					<div class="col-lg-4 hero_box_col">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="frontend/images/earth-globe.svg" class="svg" alt="">
+							<img src="frontend/images/books.svg" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title">Elemento 1</h2>
+								<h2 class="hero_box_title">Cursos</h2>
 								<a href="courses.html" class="hero_box_link">Ver más</a>
 							</div>
 						</div>
@@ -172,7 +172,7 @@
 
 					<div class="col-lg-4 hero_box_col">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="frontend/images/books.svg" class="svg" alt="">
+							<img src="frontend/images/earth-globe.svg" class="svg" alt="">
 							<div class="hero_box_content">
 								<h2 class="hero_box_title">Elemento 2</h2>
 								<a href="courses.html" class="hero_box_link">Ver más</a>
@@ -208,7 +208,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h1>Lecciones</h1>
+						<h1>Cursos Actuales</h1>
 					</div>
 				</div>
 			</div>
@@ -220,15 +220,15 @@
 					<div class="card">
 						<img class="card-img-top" src="frontend/images/course_1.jpg" alt="https://unsplash.com/@kellybrito">
 						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">A complete guide to design</a></div>
-							<div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+							<div class="card-title"><a href="courses.html">Comprensión Lectora</a></div>
+							<div class="card-text">Técnicas de Comprensión Lectora</div>
 						</div>
 						<div class="price_box d-flex flex-row align-items-center">
 							<div class="course_author_image">
 								<img src="frontend/images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
 							</div>
-							<div class="course_author_name">Michael Smith, <span>Author</span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
+							<div class="course_author_name">Docente, <span>Author</span></div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span></span></div>
 						</div>
 					</div>
 				</div>
@@ -238,15 +238,15 @@
 					<div class="card">
 						<img class="card-img-top" src="frontend/images/course_2.jpg" alt="https://unsplash.com/@cikstefan">
 						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">Beginners guide to HTML</a></div>
-							<div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+							<div class="card-title"><a href="courses.html">Curo 20</a></div>
+							<div class="card-text">Descripción ...</div>
 						</div>
 						<div class="price_box d-flex flex-row align-items-center">
 							<div class="course_author_image">
 								<img src="frontend/images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
 							</div>
-							<div class="course_author_name">Michael Smith, <span>Author</span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
+							<div class="course_author_name">Docente 2, <span>Author</span></div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span></span></div>
 						</div>
 					</div>
 				</div>
@@ -256,21 +256,36 @@
 					<div class="card">
 						<img class="card-img-top" src="frontend/images/course_3.jpg" alt="https://unsplash.com/@dsmacinnes">
 						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">Advanced Photoshop</a></div>
-							<div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+							<div class="card-title"><a href="courses.html">Curso 3</a></div>
+							<div class="card-text">Descripción...</div>
 						</div>
 						<div class="price_box d-flex flex-row align-items-center">
 							<div class="course_author_image">
 								<img src="frontend/images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
 							</div>
-							<div class="course_author_name">Michael Smith, <span>Author</span></div>
+							<div class="course_author_name">Docente 3, <span>Author</span></div>
 							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col text-center">
+				<div class="newsletter_form_container mx-auto">
+					<form action="post">
+						<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
+
+							<button id="" type="submit" class="search_submit_button trans_200" value="Submit">Ver todos los cursos</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
 	</div>
+
+
 
 	<!-- Register -->
 
@@ -469,7 +484,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h1>Upcoming Events</h1>
+						<h1>Noticias</h1>
 					</div>
 				</div>
 			</div>
@@ -484,14 +499,14 @@
 							<div class="col-lg-2 order-lg-1 order-2">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
 									<div class="event_day">07</div>
-									<div class="event_month">January</div>
+									<div class="event_month">Enero</div>
 								</div>
 							</div>
 
 							<div class="col-lg-6 order-lg-2 order-3">
 								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Student Festival</a></div>
-									<div class="event_location">Grand Central Park</div>
+									<div class="event_name"><a class="trans_200" href="#">Noticia 1</a></div>
+									<div class="event_location">Lugar</div>
 									<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor.</p>
 								</div>
 							</div>
@@ -514,14 +529,14 @@
 							<div class="col-lg-2 order-lg-1 order-2">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
 									<div class="event_day">07</div>
-									<div class="event_month">January</div>
+									<div class="event_month">Enero</div>
 								</div>
 							</div>
 
 							<div class="col-lg-6 order-lg-2 order-3">
 								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Open day in the Univesrsity campus</a></div>
-									<div class="event_location">Grand Central Park</div>
+									<div class="event_name"><a class="trans_200" href="#">Noticia 2</a></div>
+									<div class="event_location">Lugar</div>
 									<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor.</p>
 								</div>
 							</div>
@@ -544,14 +559,14 @@
 							<div class="col-lg-2 order-lg-1 order-2">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
 									<div class="event_day">07</div>
-									<div class="event_month">January</div>
+									<div class="event_month">Enero</div>
 								</div>
 							</div>
 
 							<div class="col-lg-6 order-lg-2 order-3">
 								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Student Graduation Ceremony</a></div>
-									<div class="event_location">Grand Central Park</div>
+									<div class="event_name"><a class="trans_200" href="#">Noticia 3</a></div>
+									<div class="event_location">Lugar</div>
 									<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor.</p>
 								</div>
 							</div>
@@ -614,7 +629,7 @@
 						<div class="logo_container">
 							<div class="logo">
 								<img src="frontend/images/logo.png" alt="">
-								<span>course</span>
+								<span>VELÁZQUEZ</span>
 							</div>
 						</div>
 
@@ -625,14 +640,14 @@
 					<!-- Footer Column - Menu -->
 
 					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Menu</div>
+						<div class="footer_column_title">Menú</div>
 						<div class="footer_column_content">
 							<ul>
-								<li class="footer_list_item"><a href="#">Home</a></li>
-								<li class="footer_list_item"><a href="#">About Us</a></li>
-								<li class="footer_list_item"><a href="courses.html">Courses</a></li>
-								<li class="footer_list_item"><a href="news.html">News</a></li>
-								<li class="footer_list_item"><a href="contact.html">Contact</a></li>
+								<li class="footer_list_item"><a href="#">Inicio</a></li>
+								<li class="footer_list_item"><a href="#">Cursos</a></li>
+								<li class="footer_list_item"><a href="courses.html">Noticias</a></li>
+								<li class="footer_list_item"><a href="news.html">Sobre nosotros</a></li>
+
 							</ul>
 						</div>
 					</div>
@@ -655,25 +670,25 @@
 					<!-- Footer Column - Contact -->
 
 					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Contact</div>
+						<div class="footer_column_title">Contáctanos</div>
 						<div class="footer_column_content">
 							<ul>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
 										<img src="frontend/images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									Blvd Libertad, 34 m05200 Arévalo
+									Direccion
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
 										<img src="frontend/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									0034 37483 2445 322
+								 +50585269959
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
 										<img src="frontend/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
+									</div>hola@correo.com
 								</li>
 							</ul>
 						</div>
